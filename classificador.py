@@ -4,6 +4,14 @@ import requests
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "").replace("\n", "").strip()
+
+if not GROQ_API_KEY:
+    if os.environ.get("STREAMLIT_ENV") == "production":
+        raise ValueError("Chave da API Groq não encontrada! Verifique suas Secrets no Streamlit Cloud.")
+    else:
+        raise ValueError("Chave da API Groq não encontrada! Verifique seu arquivo .env")
+
 def classificar_com_ia(email_text):
     """
     Classifica um email corporativo usando a API Groq e sugere uma resposta automática.
@@ -16,10 +24,6 @@ def classificar_com_ia(email_text):
         categoria (str) - "Produtivo" ou "Improdutivo"
         resposta (str) - resposta curta, educada e profissional
     """
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    if not GROQ_API_KEY:
-        raise ValueError("Chave da API não encontrada! Verifique seu arquivo .env")
-
     messages = [
         {
             "role": "system",
