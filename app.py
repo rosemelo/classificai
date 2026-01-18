@@ -3,21 +3,16 @@ import PyPDF2
 from dotenv import load_dotenv
 from classificador import classificar_com_ia  # Importando a função do outro arquivo
 
-# Carrega variáveis de ambiente
 load_dotenv()
 
-# Configuração da página Streamlit
 st.set_page_config(page_title="ClassificAÍ", page_icon="✉️", layout="centered")
 st.title("🤖 ClassificAÍ")
 st.subheader("Classificação inteligente de emails")
 
-# Upload de arquivos ou texto
 uploaded_file = st.file_uploader("Envie um arquivo (.txt ou .pdf)", type=["txt", "pdf"])
 email_text_input = st.text_area("Ou cole o conteúdo do email aqui:")
 
-# Botão para classificar
 if st.button("Classificar Email"):
-    # Pega o texto da área ou do arquivo
     email_text = email_text_input.strip() if email_text_input else ""
 
     if uploaded_file:
@@ -32,7 +27,6 @@ if st.button("Classificar Email"):
                 if text:
                     email_text += text + "\n"
 
-    # Se houver texto, classifica e mostra resultado
     if email_text:
         categoria, resposta = classificar_com_ia(email_text)
         st.subheader("📌 Resultado")

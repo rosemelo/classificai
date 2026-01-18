@@ -28,10 +28,16 @@ def classificar_com_ia(email_text):
         {
             "role": "system",
             "content": (
-                "Você é um classificador de emails corporativos...\n"
-                "Sempre responda no formato:\n"
-                "Categoria: <Produtivo ou Improdutivo>\n"
-                "Resposta: <mensagem>"
+               "Você é um classificador de emails corporativos de uma empresa do setor financeiro.\n\n"
+            "Classifique emails em:\n"
+            "- Produtivo: emails que solicitam ação, suporte, status de solicitações,\n"
+            "  envio de documentos, problemas técnicos ou dúvidas sobre sistemas/processos.\n"
+            "- Improdutivo: emails de agradecimento, felicitações, mensagens sociais\n"
+            "  ou que não exigem ação.\n\n"
+            "Após classificar, gere uma resposta curta, educada e profissional.\n\n"
+            "Sempre responda no formato:\n"
+            "Categoria: <Produtivo ou Improdutivo>\n"
+            "Resposta: <mensagem>"
             )
         },
         {"role": "user", "content": email_text}
