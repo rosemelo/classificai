@@ -1,16 +1,20 @@
 import os
 import requests
+from dotenv import load_dotenv
 
-GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = "llama-3.3-70b-versatile"
+if os.environ.get("STREAMLIT_ENV") != "production":
+    load_dotenv()
 
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "").replace("\n", "").strip()
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "").strip()
 
 if not GROQ_API_KEY:
     if os.environ.get("STREAMLIT_ENV") == "production":
         raise ValueError("Chave da API Groq não encontrada! Verifique suas Secrets no Streamlit Cloud.")
     else:
         raise ValueError("Chave da API Groq não encontrada! Verifique seu arquivo .env")
+    
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL = "llama-3.3-70b-versatile"
 
 def classificar_com_ia(email_text):
     """

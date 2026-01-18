@@ -14,7 +14,7 @@ Muitos emails na sua caixa de entrada?
 
 ClassificAÍ é uma aplicação web que utiliza **IA via Groq (OpenAI-compatible API)** para **classificar emails corporativos** em *Produtivos* ou *Improdutivos* e **sugerir respostas automáticas profissionais**.
 
-O projeto foi criado com foco em **boas práticas de desenvolvimento**, **prompt engineering**, **integração com LLMs** e uma abordagem **DevOps-friendly**, utilizando variáveis de ambiente e ambiente virtual isolado.
+O projeto foi criado com foco em boas práticas de desenvolvimento, prompt engineering e integração com LLMs, utilizando variáveis de ambiente e ambiente virtual isolado para garantir um ambiente seguro e reproduzível.
 
 Ele foi desenvolvido como parte do **desafio de trainee da AutoU**, demonstrando habilidades em **Python, IA aplicada e automação de processos**.
 
@@ -25,7 +25,6 @@ Ele foi desenvolvido como parte do **desafio de trainee da AutoU**, demonstrando
 * Automatizar a triagem de emails corporativos
 * Reduzir carga operacional de times administrativos e de suporte
 * Demonstrar integração prática entre **Python + IA generativa**
-* Servir como projeto de **desafio prático para trainee**, mostrando habilidades técnicas e de DevOps
 
 ---
 
@@ -187,17 +186,13 @@ As dependências estão listadas em `requirements.txt`, gerado a partir de um am
 * Integração com SMTP / Gmail / Outlook
 * Deploy em Docker
 * Pipeline CI/CD
+* Botões de limpeza específicos para cada campo (colado e upload), garantindo que cada área possa ser limpa individualmente sem afetar a outra
+* Aprimoramento da interface de classificação para evitar confusão entre múltiplos emails
+* Integração com mais formatos de arquivo
+* Ajustes nos prompts da IA para respostas ainda mais precisas e contextuais
 
 ---
 
 ## 👤 Candidato
 
-Este projeto foi desenvolvido como parte do **desafio de trainee da AutoU**, demonstrando habilidades em **Python, Flask, IA aplicada e automação de processos**.
-
----
-
-## 📌 Observações
-
-- A aplicação está funcional e pronta para testes.
-- Todos os emails de exemplo e instruções estão no README.
-- Para qualquer dúvida sobre execução ou funcionalidades, consulte a seção "Como executar o projeto".
+Este projeto foi desenvolvido como parte do **desafio de trainee da AutoU**, demonstrando habilidades em **Python, treamlit, IA aplicada e automação de processos**.
