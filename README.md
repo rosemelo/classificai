@@ -64,14 +64,13 @@ A IA recebe um **prompt estruturado**, instruindo-a a:
 * 📎 Upload de arquivos `.txt` e `.pdf`
 * 🤖 Classificação automática com IA
 * ✉️ Sugestão de resposta automática
-* 🧪 Logs para depuração
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
 * **Python 3.10+**
-* **Flask** (backend web)
+* **Streamlit** (aplicação web)  
 * **Groq API** (LLM)
 * **Requests** (HTTP client)
 * **PyPDF2** (leitura de PDFs)
@@ -87,10 +86,7 @@ classificai/
 ├── requirements.txt
 ├── .env
 ├── .gitignore
-├── templates/
-│   └── index.html
-├── static/
-│   └── style.css
+├── README.md
 └── venv/
 ```
 
@@ -143,13 +139,11 @@ pip install -r requirements.txt
 ### 3️⃣ Executar a aplicação
 
 ```bash
-python app.py
+streamlit run app.py
 ```
 
-Acesse no navegador:
-
 ```
-http://127.0.0.1:5000
+O app abrirá no navegador automaticamente.
 ```
 
 ---
